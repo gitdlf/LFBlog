@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    	 http://www.springframework.org/schema/beans/spring-beans.xsd
+     	 http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context.xsd
+         http://www.springframework.org/schema/aop
+         http://www.springframework.org/schema/aop/spring-aop.xsd
+         http://www.springframework.org/schema/tx
+     	 http://www.springframework.org/schema/tx/spring-tx.xsd">
+	<bean id="pageAction" class="cn.lfsenior.web.action.PageAction">
+		<property name="pageBeanService" ref="pageBeanService"></property>
+	</bean>
+	
+	<bean id="articleAction" class="cn.lfsenior.web.action.ArticleAction">
+		<property name="blogContentService" ref="blogContentService"></property>
+		<property name="blogCommitService" ref="blogCommitService"></property>
+	</bean>
+	
+	
+	<bean id="searchAcion" class="cn.lfsenior.web.action.SearchAction">
+		<property name="blogContentService" ref="blogContentService"></property>
+	</bean>
+	
+	<bean id="projectAction" class="cn.lfsenior.web.action.ProjectAction"></bean>
+</beans>     
+
+
+
+
+
+
+
+
+
+

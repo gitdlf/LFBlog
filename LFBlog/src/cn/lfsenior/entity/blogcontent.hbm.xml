@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.lfsenior.entity">
+	<class name="BlogContent" table="blog_content" lazy="false">
+		<id name="contentId" column="content_id" type="integer">
+			<generator class="native"></generator>
+		</id>
+		<property name="contentTitle" column="content_title"></property>
+		<property name="contentDate" column="content_date"></property>
+		<property name="contentBody" column="content_body"></property>
+		<property name="contentLabel" column="content_label"></property>
+		<property name="contentVisit" column="content_visit"></property>
+		<property name="contentDescribe" column="content_describe"></property>
+		<!-- 多对多第三张表维护 -->
+		<set name="blogCategorySet" table="blog_content_category">
+			<key column="content_id" ></key>
+			<many-to-many column="category_id"  class="BlogCategory"></many-to-many>
+		</set>
+		<many-to-one name="blogUser" class="BlogUser" column="user_id" />
+		<set name="blogCommitSet">
+			<key column="content_id"></key>
+			<one-to-many class="BlogCommit"/>
+		</set>
+	</class>
+</hibernate-mapping>

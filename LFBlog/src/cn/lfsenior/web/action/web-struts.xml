@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="cn.lfsenior.web.action" extends="struts-default">
+		<interceptors>
+			<interceptor name="initInterceptor" class="cn.lfsenior.web.intercept.InitIntercept"></interceptor>
+			<interceptor-stack name="lfInitStack">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="initInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="lfInitStack"></default-interceptor-ref>
+		<global-results>
+			<result name="input">/WEB-INF/web/404.jsp</result>
+		</global-results>
+		<!-- 分页相关 -->
+		<action name="next" class="pageAction" method="nextPage">
+			<result name="success">/WEB-INF/web/blog.jsp</result>
+		</action>
+		<action name="up" class="pageAction" method="upPage">
+			<result name="success">/WEB-INF/web/blog.jsp</result>
+		</action>
+		<action name="select" class="pageAction" method="selectPage">
+			<result name="success">/WEB-INF/web/blog.jsp</result>
+		</action>
+		<action name="blog">
+			<result name="success">/WEB-INF/web/blog.jsp</result>
+		</action>
+		
+		<!-- 文章相关 -->
+		<action name="article" class="articleAction" method="getArticle">
+			<result name="success">/WEB-INF/web/article.jsp</result>
+		</action>
+		
+		<!-- 搜索相关 -->
+		<action name="datesec" class="searchAcion" method="searchByDate">
+			<result name="success">/WEB-INF/web/blog.jsp</result>
+		</action>
+		
+		<action name="kwdsec" class="searchAcion" method="searchByKeyWord">
+			<result name="success">/WEB-INF/web/blog.jsp</result>
+		</action>
+		
+		<action name="cateesec" class="searchAcion" method="searchByCategoryId">
+			<result name="success">/WEB-INF/web/blog.jsp</result>
+		</action>
+		
+		<action name="commit" class="articleAction" method="commitArticle">
+			<result name="article" type="redirectAction">article</result>
+		</action>
+		
+		
+		<!-- 项目相关 -->
+		<action name="project" class="projectAction" method="viewProject">
+			<result name="success">/WEB-INF/web/project.jsp</result>
+		</action>
+		
+	</package>
+</struts>

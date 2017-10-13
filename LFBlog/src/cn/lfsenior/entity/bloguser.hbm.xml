@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.lfsenior.entity">
+	<class name="BlogUser" table="blog_user">
+		<id name="userId" column="user_id">
+			<generator class="native"></generator>
+		</id>
+		<property name="userName" column="user_name"></property>		
+		<property name="userAge" column="user_age"></property>		
+		<property name="userAddress" column="user_address"></property>		
+		<property name="userGender" column="user_gender"></property>		
+		<property name="userDescrip" column="user_descrip"></property>		
+		<property name="userBrith" column="user_brith"></property>		
+		<property name="userEmail" column="user_email"></property>		
+		<property name="userTel" column="user_tel"></property>		
+		<property name="userQQ" column="user_qq"></property>	
+		<property name="userPwd" column="user_pwd"></property>	
+	</class>
+</hibernate-mapping>

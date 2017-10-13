@@ -1,0 +1,12 @@
+INITSESSION：如果session有该属性说明已经初始化，否者提示未初始化
+BLOGCONTENT：表示博客页面内容
+ARTICLELIST：初始化文章列表
+BLOGCATEGORY:初始化用户类别
+page：PageBean数据
+timeLine：时间线
+article：文章信息
+DATESEARCH：按时间搜索标记
+KEYWORDSEARCH：按关键词搜索标记
+CATEGORYSEARCH：按类别搜索标记
+
+

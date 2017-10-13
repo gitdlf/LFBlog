@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    	 http://www.springframework.org/schema/beans/spring-beans.xsd
+     	 http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context.xsd
+         http://www.springframework.org/schema/aop
+         http://www.springframework.org/schema/aop/spring-aop.xsd
+         http://www.springframework.org/schema/tx
+     	 http://www.springframework.org/schema/tx/spring-tx.xsd">
+	<bean id="blogCategoryService" class="cn.lfsenior.web.service.imp.BlogCategoryService">
+		<property name="blogCategoryDao" ref="blogCategoryDao"></property>
+	</bean>
+	
+	<bean id="blogCommitService" class="cn.lfsenior.web.service.imp.BlogCommitService">
+		<property name="blogCommitDao" ref="blogCommitDao"></property>
+	</bean>
+	
+	<bean id="blogContentService" class="cn.lfsenior.web.service.imp.BlogContentService">
+		<property name="blogContentDao" ref="blogContentDao"></property>
+	</bean>
+	
+	<bean id="blogUserService" class="cn.lfsenior.web.service.imp.BlogUserService">
+		<property name="blogUserDao" ref="blogUserDao"></property>
+	</bean>
+	
+	<bean id="pageBeanService" class="cn.lfsenior.web.service.imp.PageBeanService">
+		<property name="pageBeanDao" ref="pageBeanDao"></property>
+	</bean>
+	
+	<bean id="timeLineService" class="cn.lfsenior.web.service.imp.TimeLineService">
+		<property name="timeLineDao" ref="timeLineDao"></property>
+	</bean>
+	<bean id="initBlogService" class="cn.lfsenior.web.service.imp.InitBlogService">
+		<property name="pageBeanDao" ref="pageBeanDao"></property>
+		<property name="timeLineDao" ref="timeLineDao"></property>
+		<property name="blogCategoryDao" ref="blogCategoryDao"></property>
+	</bean>
+</beans>     
+
+
+
+
+
+
+
+
+
+

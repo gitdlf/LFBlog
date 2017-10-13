@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.lfsenior.entity">
+	<class name="BlogCommit" table="blog_commit">
+		<id name="commitId" column="commit_id">
+			<generator class="native"></generator>
+		</id>
+		<property name="commitName" column="commit_name"></property>
+		<property name="commitEmail" column="commit_email"></property>
+		<property name="commitContent" column="commit_content"></property>
+		<property name="commitDate" column="commit_date"></property>
+		<!-- 多对一 -->
+		<many-to-one name="blogContent" class="BlogContent" column="content_id" />
+	</class>
+</hibernate-mapping>

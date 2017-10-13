@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.lfsenior.entity">
+	<class name="BlogCategory" table="blog_category">
+		<id name="categoryId" column="category_id">
+			<generator class="native"></generator>
+		</id>
+		<property name="categoryName" column="category_name"></property>	
+		<many-to-one name="blogUser" class="BlogUser" column="user_id"></many-to-one>	
+	</class>
+</hibernate-mapping>
